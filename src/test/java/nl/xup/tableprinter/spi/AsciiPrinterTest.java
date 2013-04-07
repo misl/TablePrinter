@@ -18,14 +18,14 @@ public class AsciiPrinterTest {
   public void nullTablePrinter() {
     String printedTable = new AsciiPrinter().print( null );
     
-    assertThat( printedTable, is( "empty" ) );
+    assertThat( printedTable, is( "(empty)" ) );
   }
 
   @Test
   public void emptyTablePrinter() {
     String printedTable = new AsciiPrinter().print( new TablePrinter() );
     
-    assertThat( printedTable, is( "empty" ) );
+    assertThat( printedTable, is( "(empty)" ) );
   }
 
   @Test
@@ -40,7 +40,7 @@ public class AsciiPrinterTest {
     expectedTable.append( "+---+---+---+\n" );
     expectedTable.append( "| a | b | c |\n" );
     expectedTable.append( "+---+---+---+\n" );
-    expectedTable.append( "| empty     |\n" );
+    expectedTable.append( "| (empty)   |\n" );
     expectedTable.append( "+---+---+---+\n" );
     assertThat( printedTable, is( expectedTable.toString() ) );
   }

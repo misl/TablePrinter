@@ -16,6 +16,7 @@ public class AsciiPrinter implements Printer {
   // Constants
   // -------------------------------------------------------------------------
 
+  private static final String EMPTY_VALUE = "(empty)";
   private static final String NULL_VALUE = "null";
   private static final String NEWLINE = "\n";
 
@@ -45,12 +46,12 @@ public class AsciiPrinter implements Printer {
         }
       } else {
         printedTable.append( TABLE_COLUMN );
-        printedTable.append( prepareCell( "empty", lineSeparator.length() - 5, Alignment.LEFT ) );
+        printedTable.append( prepareCell( EMPTY_VALUE, lineSeparator.length() - 5, Alignment.LEFT ) );
         printedTable.append( TABLE_COLUMN ).append( NEWLINE );
       }
       printedTable.append( lineSeparator );
     } else {
-      printedTable.append( "empty" );
+      printedTable.append( EMPTY_VALUE );
     }
 
     return printedTable.toString();
